@@ -1,4 +1,11 @@
 /* Youtube player style */
+
+.video-js {
+	border: #ccc solid;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0,0,0,0.8), 0 0 rgba(0,0,0,0.8);
+	border-radius: 0.3em;
+}
+
 .video-js.player-style-youtube .vjs-progress-control {
   height: 0;
 }
