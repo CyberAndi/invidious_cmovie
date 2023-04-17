@@ -1110,15 +1110,16 @@ hr {
 }
 
 .video-js .vjs-overlay::after {
-	content: url('/CMovie-Logo.png') !important;
+	background-image: url(/Wasser.png);
+	content: url('/CMovie.svg') !important;
 	display: block !important;
-	height: 166px;
+	height: 9vw;
 	box-sizing: border-box !important;
 	transform: scale(.75);
 	aspect-ratio: 16/9 !important;
 	border: solid 4px #f0f0f0 !important;
-	left: -24.5% !important;
-	top: calc(-166px + 3em) !important;
+	left: calc(-24% + 3px) !important;
+	top: calc(-9vw + 3em) !important;
 	position: relative !important;
 	text-align: left !important;
 	overflow: hidden;
@@ -1128,7 +1129,6 @@ hr {
 	text-align: left !important;
 	padding-left: 15vw !important;
 }
-
 
 button.vjs-control.vjs-button.watch-on-invidious a {
 	visibility: hidden;
@@ -1141,6 +1141,7 @@ button.vjs-control.vjs-button.watch-on-invidious a::after {
 	left: -5.3em;
 	position: relative;
 }
+
 
 /* Description Expansion Styling*/
 #descexpansionbutton,
