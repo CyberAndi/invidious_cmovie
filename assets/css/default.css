@@ -1,19 +1,19 @@
-/*
- * Common attributes
- */
 @font-face{font-family:"OCR-A";src:url("../fonts/OCRAStd.woff");}
 @font-face{font-family:"ocr-a";src:url("../fonts/OCRAStd.woff");}
 
 html,
 body {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
-	background-color: #03060b;
+  	font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
+    	 Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
+    	 Arial, sans-serif;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  	text-rendering: optimizeLegibility;
+  	background-color: #03060b;
   	background-image: linear-gradient(0deg, transparent, transparent, transparent, rgba(47,121,160,1));
-	color: #f0f0f0;
-	text-shadow: 0.25em 0.25em 0.5em rgba(0,0,0,0.8), 0 0 0.5em rgba(0,0,0,0.5);
-	background-attachment: fixed;
+  	color: #f0f0f0;
+  	text-shadow: 0.25em 0.25em 0.5em rgba(0,0,0,0.8), 0 0 0.5em rgba(0,0,0,0.5);
+  	background-attachment: fixed;
 }
 
 #contents {
@@ -70,6 +70,10 @@ button.simulated_a  {
   border: none;
 }
 
+a.index-link.pure-menu-heading {
+  color: transparent;
+  text-shadow: none;
+}
 
 /*
  * Channel page
@@ -141,8 +145,19 @@ body a.channel-owner {
 
 .feed-menu {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
+  position: fixed;
+  position-anchor: auto;
+  left: 0px;
+  top: 4.8rem;
+  width: 150px;
+  overflow-x: hidden;
+  background: rgba(32,32,32,0.6);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0 5rem !important;
+  box-shadow: 0.15rem 0.15rem 0.75rem rgba(32,32,32,0.8);
+  border-top: .1px solid rgba(230,230,230,.4);
 }
 
 .feed-menu-item {
@@ -217,11 +232,19 @@ div.thumbnail {
   box-sizing: border-box;
 }
 
+.pure-g .h-box :has(.thumbnail) {
+        padding-top: 2.25rem;
+}
+
 img.thumbnail {
   display: block; /* See: https://stackoverflow.com/a/11635197 */
   width: 100%;
   object-fit: cover;
   aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+  border-top: 0.1px solid rgba(230,230,230,0.5);
+  border-left: 0.1px solid rgba(230,230,230,0.5);
+  box-shadow: 0.15rem 0.15rem 0.75rem rgba(32,32,32,0.8);
 }
 
 .thumbnail-placeholder {
@@ -278,10 +301,19 @@ div.thumbnail > .bottom-right-overlay {
  */
 
 .navbar {
-  margin: 1em 0;
   display: flex; /* this is also defined in framework, but in case of future changes */
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  left: 0;
+  width: calc(100vw - 3rem);
+  background-color: rgba(35, 35, 35, .8);
+  background-image: linear-gradient(
+90deg, transparent, rgba(47, 121, 160, 1)) !important;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0.15rem 0.15rem 0.75rem rgba(32,32,32,0.8);
+  backdrop-filter: blur(.5rem);
+  z-index: 100;
 }
 
 .navbar > div {
@@ -290,6 +322,14 @@ div.thumbnail > .bottom-right-overlay {
 
 .searchbar {
   flex-grow: 2; /* take double the space of the other items */
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  border: .1px solid rgba(230,230,230,.4);
+  background-color: rgba(32,32,32,0.8);
+  padding: 0.1rem 1rem;
+  box-shadow: 0.15rem 0.15rem 0.75rem rgba(32,32,32,0.8);
 }
 
 .navbar a {
@@ -683,7 +723,7 @@ body.dark-theme {
 }
 
 .dark-theme .pure-menu-heading {
-  color: #f0f0f0;
+  color: #f1f1f1;
 }
 
 .dark-theme input,
@@ -934,3 +974,10 @@ h1, h2, h3, h4, h5, p,
 #comments-turned-off-on-video-message > p, #comments-disabled-message > p {
   text-align: center;
 }
+
+
+.pure-g:not(.navbar).h-box {
+        display: none;
+}
+
+.feed-menu > a {width: 5.9rem !important;text-align: left;overflow: hidden;}
